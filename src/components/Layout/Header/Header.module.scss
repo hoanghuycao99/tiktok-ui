@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+    height: 60px;
+    width: 100%;
+}
+
+.inner {
+    height: 100%;
+    width: var(--default-header-width);
+    background-color: red;
+}
