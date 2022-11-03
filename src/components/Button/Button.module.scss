@@ -1,0 +1,70 @@
+.wrapper {
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 1);
+
+    border: 1px solid transparent;
+
+    + .wrapper {
+        margin-left: 16px;
+    }
+}
+
+.primary {
+    min-width: 100px;
+    min-height: 36px;
+    padding: 6px 8px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(254, 44, 85, 1);
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'IBM Plex Sans', ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+    }
+
+    &:active {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), #fe2c55;
+    }
+}
+
+.outline {
+    border-color: #fe2c55;
+    color: #fe2c55;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: 'IBM Plex Sans', ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    min-height: 28px;
+    min-width: 88px;
+    padding: 0 10px;
+
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
+
+    &:active {
+        background-color: rgba(254, 44, 85, 0.16);
+    }
+}
+
+.upload {
+    min-width: 110px;
+    padding: 0 16px;
+    height: 36px;
+    border-color: rgba(22, 24, 35, 0.12);
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.leftIcon + .title,
+.title + .rightIcon {
+    margin-left: 8px;
+}
