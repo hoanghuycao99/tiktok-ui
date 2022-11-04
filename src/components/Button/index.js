@@ -7,22 +7,23 @@ function Button({
     to,
     href,
     onClick,
-    leftIcon,
-    rightIcon,
+    lefticon,
+    righticon,
     primary = false,
     outline = false,
     upload = false,
     passProbs,
     children,
+    className,
 }) {
     let Comp = 'button';
 
-    const classess = cx('wrapper', { primary, outline, upload });
+    const classess = cx('wrapper', { primary, outline, upload }, className);
 
     const probs = {
         onClick,
-        leftIcon,
-        rightIcon,
+        lefticon,
+        righticon,
         ...passProbs,
     };
 
@@ -35,9 +36,9 @@ function Button({
 
     return (
         <Comp className={classess} {...probs}>
-            {leftIcon && <span className={cx('leftIcon')}>{leftIcon}</span>}
+            {lefticon && <span className={cx('leftIcon')}>{lefticon}</span>}
             <span className={cx('title')}>{children}</span>
-            {rightIcon && <span className={cx('rightIcon')}>{rightIcon}</span>}
+            {righticon && <span className={cx('rightIcon')}>{righticon}</span>}
         </Comp>
     );
 }
