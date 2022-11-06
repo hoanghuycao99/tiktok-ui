@@ -118,7 +118,7 @@ function Header() {
                         {currentuser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t39.30808-6/277522933_2594413757369627_6134992832076918398_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=rTgfKNpmzygAX_YFimY&_nc_ht=scontent.fsgn2-2.fna&oh=00_AfCyBE7u-8cMlX_ubw5JrE8eLR4R7mPooJAMDGF0ufGotw&oe=6367C7BD"
+                                src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t39.30808-6/277522933_2594413757369627_6134992832076918398_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=N1kepntUP0gAX_ORh3x&_nc_ht=scontent.fsgn2-2.fna&oh=00_AfCSmWMtqD5T5OSzthEO96N_2ELxWnN2z1XJRc8r8J2jgg&oe=636DB67D"
                                 alt="Hoang Huy"
                             />
                         ) : (
