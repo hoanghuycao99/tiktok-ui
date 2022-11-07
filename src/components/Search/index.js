@@ -8,6 +8,7 @@ import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import { useEffect, useState, useRef } from 'react';
 import { useDebounce } from '~/hooks';
+import * as request from '~/utils/request';
 
 const cx = classNames.bind(styles);
 
@@ -28,8 +29,13 @@ function Search() {
 
         setLoading(true);
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(deBounce)}&type=less`)
-            .then((res) => res.json())
+        request
+            .get(`users/search?`, {
+                params: {
+                    q: deBounce,
+                    type: 'less',
+                },
+            })
             .then((res) => {
                 setSearchResult(res.data);
                 setLoading(false);
@@ -50,51 +56,54 @@ function Search() {
     };
 
     const handleKeyDown = (e) => {
-        if (!searchValue.trim() && e.key === ' ') {
-            e.preventDefault();
+        const searchValue = e.target.value;
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(searchValue);
         }
     };
 
     return (
-        <Tippy
-            visible={showResult && searchResult.length > 0}
-            interactive={true}
-            onClickOutside={handleShowResult}
-            render={(attrs) => (
-                <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper>
-                        <h4 className={cx('search-title')}>Accounts</h4>
-                        {searchResult.map((result) => (
-                            <AccountItem key={result.id} data={result} />
-                        ))}
-                    </PopperWrapper>
-                </div>
-            )}
-        >
-            <div className={cx('search')}>
-                <input
-                    ref={inputRef}
-                    value={searchValue}
-                    placeholder="Search accounts and videos"
-                    spellCheck={false}
-                    onKeyDown={handleKeyDown}
-                    onChange={(e) => setSearchValue(e.target.value)}
-                    onFocus={() => {
-                        setShowResult(true);
-                    }}
-                />
-                {!!searchValue && !loading && (
-                    <button className={cx('clear-btn')} onClick={handleClear}>
-                        <FontAwesomeIcon icon={faCircleXmark} />
-                    </button>
+        <div>
+            <Tippy
+                visible={showResult && searchResult.length > 0}
+                interactive={true}
+                onClickOutside={handleShowResult}
+                render={(attrs) => (
+                    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                        <PopperWrapper>
+                            <h4 className={cx('search-title')}>Accounts</h4>
+                            {searchResult.map((result) => (
+                                <AccountItem key={result.id} data={result} />
+                            ))}
+                        </PopperWrapper>
+                    </div>
                 )}
-                {loading && <FontAwesomeIcon icon={faSpinner} className={cx('loading')} />}
-                <span className={cx('split-line')}></span>
-                <button className={cx('search-btn')}>
-                    <SearchIcon />
-                </button>
-            </div>
-        </Tippy>
+            >
+                <div className={cx('search')}>
+                    <input
+                        ref={inputRef}
+                        value={searchValue}
+                        placeholder="Search accounts and videos"
+                        spellCheck={false}
+                        onKeyDown={handleKeyDown}
+                        onChange={(e) => handleKeyDown(e)}
+                        onFocus={() => {
+                            setShowResult(true);
+                        }}
+                    />
+                    {!!searchValue && !loading && (
+                        <button className={cx('clear-btn')} onClick={handleClear}>
+                            <FontAwesomeIcon icon={faCircleXmark} />
+                        </button>
+                    )}
+                    {loading && <FontAwesomeIcon icon={faSpinner} className={cx('loading')} />}
+                    <span className={cx('split-line')}></span>
+                    <button className={cx('search-btn')}>
+                        <SearchIcon />
+                    </button>
+                </div>
+            </Tippy>
+        </div>
     );
 }
 

@@ -20,6 +20,7 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { UploadIcon, MessageIcon, InboxIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '~/components/Search';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -33,6 +34,118 @@ function Header() {
             children: {
                 title: 'Language',
                 data: [
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        code: 'en',
+                        title: 'Enlish',
+                    },
+                    {
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
                     {
                         code: 'en',
                         title: 'Enlish',
@@ -82,7 +195,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="Tiktok" />
+                <Link className={cx('logo')} to={'/'}>
+                    <img src={images.logo} alt="Tiktok" />
+                </Link>
 
                 {<Search />}
 

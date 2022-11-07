@@ -35,6 +35,7 @@ function Menu({ children, items = [] }) {
             delay={[0, 700]}
             placement="bottom-end"
             offset={[15, 8]}
+            hideOnClick={false}
             onHide={() => {
                 setHistory((prev) => prev.slice(0, 1));
             }}
@@ -48,7 +49,7 @@ function Menu({ children, items = [] }) {
                                 }}
                             />
                         )}
-                        {renderItem()}
+                        <div className={cx('scrollable')}>{renderItem()}</div>
                     </PopperWrapper>
                 </div>
             )}

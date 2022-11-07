@@ -27,7 +27,10 @@
 
 .menu-popper {
     padding-bottom: 8px;
-    max-height: none;
+}
+
+.scrollable {
+    overflow-y: auto;
 }
 
 .header {
