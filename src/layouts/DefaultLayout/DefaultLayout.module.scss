@@ -6,10 +6,12 @@
 
 .container {
     width: var(--default-header-width);
+    max-width: 100%;
     display: flex;
     margin-top: 60px;
 }
 
 .content {
     flex: 1;
+    margin-left: 348px;
 }

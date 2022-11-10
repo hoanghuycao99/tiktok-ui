@@ -4,6 +4,9 @@
     background-color: rgba(255, 255, 255, 1);
     font-family: 'ProximaNova', Arial, Tahoma, 'PingFangSC', sans-serif;
     border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     + .wrapper {
         margin-left: 16px;

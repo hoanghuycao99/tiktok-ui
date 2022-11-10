@@ -1,0 +1,40 @@
+.wrapper {
+    width: 348px;
+    min-height: 100%;
+    padding: 20px 0px 26px 8px;
+}
+
+.Login {
+    margin-top: 8px;
+    padding: 20px 8px 24px 8px;
+    position: relative;
+    &::before {
+        content: '';
+        height: 1px;
+        position: absolute;
+        top: 0;
+        right: 8px;
+        left: 8px;
+        background-color: rgba(22, 24, 35, 0.12);
+        transform: scaleY(0.5);
+    }
+}
+
+.Login-title {
+    color: rgba(22, 24, 35, 0.5);
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.Login-btn {
+    margin-top: 20px;
+    width: 100%;
+    min-height: 48px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'SofiaPro', sans-serif;
+    align-items: center;
+    padding: 6px 8px;
+    box-sizing: border-box;
+    line-height: 25px;
+}

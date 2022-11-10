@@ -39,6 +39,9 @@ function Menu({ children, items = [] }) {
             onHide={() => {
                 setHistory((prev) => prev.slice(0, 1));
             }}
+            onClickOutside={(instance) => {
+                instance.hide();
+            }}
             render={(attrs) => (
                 <div className={cx('content')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>

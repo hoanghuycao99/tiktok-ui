@@ -1,0 +1,87 @@
+.preview {
+    position: relative;
+    width: 320px;
+    box-sizing: border-box;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    img {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    Button {
+        min-width: 106px;
+        min-height: 28px;
+        font-weight: 600;
+        line-height: 22px;
+        padding: 6px 8px;
+        align-items: center;
+        box-sizing: border-box;
+    }
+}
+
+.info {
+    flex: 1;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+
+    strong {
+        color: rgb(22, 24, 35);
+        font-family: 'SofiaPro', sans-serif;
+    }
+
+    .icon {
+        color: rgb(32, 213, 236);
+        font-size: 14px;
+        margin-left: 4px;
+        padding-bottom: 4px;
+    }
+}
+
+.name {
+    color: rgb(22, 24, 35);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.interactive {
+    margin-top: 8px;
+}
+
+.num-follow {
+    font-weight: 700;
+    margin-right: 6px;
+    font-size: 17px;
+    line-height: 20px;
+    display: inline-block;
+}
+
+.follow-like {
+    margin-right: 12px;
+    color: rgba(22, 24, 35, 0.75);
+    font-size: 17px;
+    line-height: 20px;
+    display: inline-block;
+}
