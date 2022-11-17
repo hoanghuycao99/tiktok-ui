@@ -6,6 +6,7 @@ import Profile from '~/pages/Profile';
 import Upload from '~/pages/Upload';
 import HeaderOnlyLayout from '~/layouts/HeaderOnly';
 import Search from '~/pages/Search';
+import ProfileLayout from '~/layouts/ProfileLayout/ProfileLayout';
 
 const publicRoutes = [
     {
@@ -21,6 +22,7 @@ const publicRoutes = [
     {
         path: config.routes.profile,
         component: Profile,
+        layout: ProfileLayout,
     },
 
     {

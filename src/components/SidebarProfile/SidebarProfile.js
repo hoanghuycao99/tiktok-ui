@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import config from '~/config';
-import styles from './Sidebar.module.scss';
+import styles from './SidebarProfile.module.scss';
 import Menu, { MenuItem } from './Menu';
 import { HomeIcon, FollowingIcon, LiveIcon, HomeActiveIcon, FollowingActiveIcon, LiveActiveIcon } from '../Icons';
 import Button from '../Button';
@@ -10,7 +10,7 @@ import { getToken } from '~/utils/Login';
 
 const cx = classNames.bind(styles);
 
-function Sidebar() {
+function SidebarProfile() {
     let currentUser = false;
     return (
         <aside className={cx('wrapper')}>
@@ -43,4 +43,4 @@ function Sidebar() {
     );
 }
 
-export default Sidebar;
+export default SidebarProfile;

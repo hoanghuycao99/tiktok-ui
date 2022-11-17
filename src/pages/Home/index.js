@@ -1,5 +1,7 @@
+const { default: MainContainer } = require('~/components/MainContainer');
+
 function Home() {
-    return <h1 style={{ height: 2000 }}>Home</h1>;
+    return <MainContainer />;
 }
 
 export default Home;

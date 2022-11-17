@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from './Header.module.scss';
+import styles from './HeaderProfile.module.scss';
 import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -27,8 +27,8 @@ import { getToken } from '~/utils/Login';
 
 const cx = classNames.bind(styles);
 
-function Header({ className }) {
-    const classess = cx('inner', className);
+function HeaderProfile({ className }) {
+    const classess = cx('wrapper', className);
     let currentuser = false;
     const [modalShow, setModalShow] = useState(false);
 
@@ -198,58 +198,56 @@ function Header({ className }) {
     ];
     return (
         <>
-            <header className={cx('wrapper')}>
-                <div className={classess}>
-                    <Link className={cx('logo')} to={'/'}>
-                        <img src={images.logo} alt="Tiktok" />
-                    </Link>
+            <header className={classess}>
+                <Link className={cx('logo')} to={'/'}>
+                    <img src={images.logo} alt="Tiktok" />
+                </Link>
 
-                    {<Search />}
+                {<Search />}
 
-                    <div className={cx('actions')}>
-                        {!getToken ? (
-                            <>
-                                <TippyHead delay={(0, 50)} content="Upload video" placement="bottom">
-                                    <button className={cx('action-btn')}>
-                                        <UploadIcon />
-                                    </button>
-                                </TippyHead>
-                                <TippyHead delay={[0, 50]} content="Message" placement="bottom">
-                                    <button className={cx('action-btn')}>
-                                        <MessageIcon />
-                                    </button>
-                                </TippyHead>
-                                <TippyHead delay={[0, 50]} content="Inbox" placement="bottom">
-                                    <button className={cx('action-btn')}>
-                                        <InboxIcon />
-                                        <span className={cx('badge')}>12</span>
-                                    </button>
-                                </TippyHead>
-                            </>
-                        ) : (
-                            <>
-                                <Button upload lefticon={<FontAwesomeIcon icon={faPlus} />}>
-                                    Upload
-                                </Button>
-                                <Button primary onClick={() => setModalShow(true)}>
-                                    Log in
-                                </Button>
-                            </>
-                        )}
-                        <Menu items={!getToken ? userMenu : MENU_ITEMS}>
-                            {!getToken ? (
-                                <Image
-                                    className={cx('user-avatar')}
-                                    src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t39.30808-6/277522933_2594413757369627_6134992832076918398_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=N1kepntUP0gAX_ORh3x&_nc_ht=scontent.fsgn2-2.fna&oh=00_AfCSmWMtqD5T5OSzthEO96N_2ELxWnN2z1XJRc8r8J2jgg&oe=636DB67D"
-                                    alt="Hoang Huy"
-                                />
-                            ) : (
-                                <button className={cx('more-btn')}>
-                                    <FontAwesomeIcon icon={faEllipsisVertical} />
+                <div className={cx('actions')}>
+                    {!getToken ? (
+                        <>
+                            <TippyHead delay={(0, 50)} content="Upload video" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <UploadIcon />
                                 </button>
-                            )}
-                        </Menu>
-                    </div>
+                            </TippyHead>
+                            <TippyHead delay={[0, 50]} content="Message" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <MessageIcon />
+                                </button>
+                            </TippyHead>
+                            <TippyHead delay={[0, 50]} content="Inbox" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
+                                    <span className={cx('badge')}>12</span>
+                                </button>
+                            </TippyHead>
+                        </>
+                    ) : (
+                        <>
+                            <Button upload lefticon={<FontAwesomeIcon icon={faPlus} />}>
+                                Upload
+                            </Button>
+                            <Button primary onClick={() => setModalShow(true)}>
+                                Log in
+                            </Button>
+                        </>
+                    )}
+                    <Menu items={!getToken ? userMenu : MENU_ITEMS}>
+                        {!getToken ? (
+                            <Image
+                                className={cx('user-avatar')}
+                                src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t39.30808-6/277522933_2594413757369627_6134992832076918398_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=N1kepntUP0gAX_ORh3x&_nc_ht=scontent.fsgn2-2.fna&oh=00_AfCSmWMtqD5T5OSzthEO96N_2ELxWnN2z1XJRc8r8J2jgg&oe=636DB67D"
+                                alt="Hoang Huy"
+                            />
+                        ) : (
+                            <button className={cx('more-btn')}>
+                                <FontAwesomeIcon icon={faEllipsisVertical} />
+                            </button>
+                        )}
+                    </Menu>
                 </div>
             </header>
 
@@ -258,4 +256,4 @@ function Header({ className }) {
     );
 }
 
-export default Header;
+export default HeaderProfile;

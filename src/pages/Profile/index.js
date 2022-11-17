@@ -1,5 +1,7 @@
+const { default: MainProfile } = require('~/components/MainProfile');
+
 function Profile() {
-    return <h1>Profile</h1>;
+    return <MainProfile />;
 }
 
 export default Profile;
